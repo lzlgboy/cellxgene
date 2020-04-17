@@ -1,6 +1,5 @@
 import React from "react";
 import { connect } from "react-redux";
-import * as globals from "../../globals";
 import { termsOfServiceToast } from "../framework/toasters";
 
 const TosDismissedKey = "cxg.tosDismissed";
@@ -18,13 +17,11 @@ function storageGet(key, defaultValue = null) {
 function storageSet(key, value) {
   try {
     window.localStorage.setItem(key, value);
-  } catch {
-    return;
-  }
+  } catch {}
 }
 
 @connect(state => ({
-  tosURL: state.config?.parameters?.about_legal_tos
+  tosURL: state.config?.parameters?.["about_legal_tos"]
 }))
 class TermsPrompt extends React.PureComponent {
   constructor(props) {

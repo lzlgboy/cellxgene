@@ -214,11 +214,15 @@ class GeneExpression extends React.Component {
     if (!varIndex) return null;
 
     return (
-      <div>
+      <div
+        style={{
+          borderBottom: `1px solid ${globals.lighterGrey}`,
+        }}
+      >
         <div>
           <div
             style={{
-              padding: globals.leftSidebarSectionPadding
+              padding: globals.leftSidebarSectionPadding,
             }}
           >
             <Button
